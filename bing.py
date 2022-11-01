@@ -36,12 +36,12 @@ class Wallpaper:
         if all.get("images") and today.date in [ items["enddate"] for items in all["images"] ]:
             print('数据已存在')
         else:
+            file.dumpImagesJson(all, today)
             temp = [ item["enddate"][:6] for item in all["images"] ]
             months = list(set(temp))
             months.sort(key=temp.index)
             months.reverse()
             region = self.region
-            file.dumpImagesJson(all, today)
             file.writeToReadme(all, today, months, region)
             print('更新完成')
 
