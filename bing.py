@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
-import json
+from pathlib import *
 import calendar
 import requests
 from FileUtils import FileUtils
@@ -64,9 +63,8 @@ class Wallpaper:
                 months = list(set(total) - set(old_archive))
         
         for month in months:
-            path = os.path.join("archive", self.region, month)
-            if not os.path.exists(path):
-                os.makedirs(path)
+            path = PurePosixPath("archive", self.region, month)
+            Path(path).mkdir(parents=True, exist_ok=True)
             file.writeToArchive(all, path, month)
             lastdate = month + str(calendar.monthrange(int(month[:4]), int(month[-2:]))[1])
             if lastdate in [ item["enddate"] for item in all["images"] ]:

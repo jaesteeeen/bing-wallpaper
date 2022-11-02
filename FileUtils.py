@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
+from pathlib import *
 import json
 from Images import Images
 
@@ -30,9 +30,8 @@ dic = {
 
 class FileUtils:
     def __init__(self, jsonfile, readmefile):
-        work_dir = os.path.abspath(".")
-        self.local_json_path = os.path.join(work_dir, jsonfile)
-        self.readme_path = os.path.join(work_dir, readmefile)
+        self.local_json_path = PurePosixPath(jsonfile)
+        self.readme_path = PurePosixPath(readmefile)
         self.dic =  {
                      "images": [],
                      "months": {
@@ -43,7 +42,7 @@ class FileUtils:
 
     # 读取保存的json文件
     def loadJson(self):
-        if os.path.exists(self.local_json_path):
+        if Path(self.local_json_path).exists():
             with open(self.local_json_path, "r", encoding="utf-8")as f:
                 local_json = json.load(f)
                 return local_json
@@ -97,7 +96,7 @@ class FileUtils:
             elif "US" == region:
                 f.write("### Archive:\n")
             for i in months:
-                path = os.path.join("archive", region, i, "README.md")
+                path = PurePosixPath("archive", region, i, "README.md")
                 f.write("[{}-{}]({}) | ".format(i[:4], i[-2:], path))
 
     # 每月存档readme
@@ -105,7 +104,7 @@ class FileUtils:
         rows = [ item for item in items["images"] if item["enddate"].startswith(str(month)) ]
         last = rows.pop()
         rows.reverse()
-        file = os.path.join(path, "README.md")
+        file = PurePosixPath(path, "README.md")
         with open(file, "w", encoding="utf-8")as f:
             f.write('## Bing Wallpaper ({}-{})\n'.format(month[:4],month[-2:]))
             last = Images(last)
