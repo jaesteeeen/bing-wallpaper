@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2024-01)
-![](https://www.bing.com/th?id=OHR.GoldenGateLight_ZH-CN3874822904_UHD.jpg&w=1000)Today: [金门大桥，旧金山，加利福尼亚州，美国 (© Jim Patterson/Tandem Stills + Motion)](https://www.bing.com/th?id=OHR.GoldenGateLight_ZH-CN3874822904_UHD.jpg)
+![](https://www.bing.com/th?id=OHR.GoldenGateLight_ZH-CN3874822904_UHD.jpg&w=1000)Latest: [金门大桥，旧金山，加利福尼亚州，美国 (© Jim Patterson/Tandem Stills + Motion)](https://www.bing.com/th?id=OHR.GoldenGateLight_ZH-CN3874822904_UHD.jpg)
 
 |      |      |      |
 | :----: | :----: | :----: |

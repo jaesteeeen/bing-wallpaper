@@ -36,6 +36,11 @@ class Images():
         url = self.image_url + "&w=1000"
         return "![]({})Today: [{}]({})".format(url, self.desc, self.image_url)
 
+    # archive文件夹readme文件格式化
+    def toLatest(self):
+        url = self.image_url + "&w=1000"
+        return "![]({})Latest: [{}]({})".format(url, self.desc, self.image_url)
+    
     # 新增json数据的格式化
     def toJson(self):
         return {
